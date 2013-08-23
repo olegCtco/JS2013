@@ -15,6 +15,9 @@
             </roles>
         </developer>
         <developer>
+            <name>Dmitry Papka</name>
+        </developer>
+        <developer>
             <name>Valentin Paramonov</name>
             <roles>
                 <role>Enter Sandman</role>
@@ -48,6 +51,18 @@
             <name>Karina Atayeva</name>
             <roles>
                 <role>js2013 trainee</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Mihail Ruskevich</name>
+                <roles>
+                    <role>pupet</role>
+                </roles>
+        </developer>
+        <developer>
+            <name>Dmitry Rahmanin</name>
+            <roles>
+                <role>puppet? o_O</role>
             </roles>
         </developer>
     </developers>
