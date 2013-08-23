@@ -15,6 +15,12 @@
                 <role>master of puppets</role>
             </roles>
         </developer>
+        <developer>
+            <name>Oleg Fedkin</name>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
     </developers>
 
 </project>
