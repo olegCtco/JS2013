@@ -35,12 +35,6 @@
                 <role>Kitchen CEO</role>
             </roles>
         </developer>
-        <developer>
-            <name>Karina Atayeva</name>
-            <roles>
-                <role>js2013 trainee</role>
-            </roles>
-        </developer>
     </developers>
 
 </project>
