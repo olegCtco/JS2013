@@ -48,11 +48,12 @@ public class H2Test {
         stmt.executeUpdate(sql);
     }
 
+    void close(Statement stmt, Connection conn) {
+    }
+
     @Test
     public void insert() throws SQLException {
         stmt.executeUpdate("INSERT INTO STUDENTS(FNAME,SNAME,UNI) VALUES('DENIS','UDOD','RKIIGA')");
-
-        //
         ResultSet rs = stmt.executeQuery("SELECT * FROM STUDENTS");
         while (rs.next()) {
             String s = rs.getInt("ID") + ":" +
