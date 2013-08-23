@@ -11,3 +11,6 @@
 
 # MAVEN
 target/
+
+#DB
+2013-08-23.web-studentlist-db/db/
