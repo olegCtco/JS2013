@@ -1,6 +1,5 @@
 package student.web.test;
 
-import com.fasterxml.jackson.core.JsonFactory;
 import org.codehaus.jackson.map.ObjectMapper;
 import student.app.test.ListTest;
 import student.domain.Student;
@@ -20,14 +19,14 @@ public class ListTestServlet extends HttpServlet {
         req.getContentType();
         ListTest app = new ListTest();
         List<Student> students = app.getStudents();
-        req.setAttribute("students",students);
+        req.setAttribute("students", students);
         //
         if ("application/json".equals(req.getContentType())) {
             //1. Convert Java object to JSON format
             ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(resp.getWriter(),students);
+            mapper.writeValue(resp.getWriter(), students);
         } else {
-            req.getRequestDispatcher("/WEB-INF/view/test/list.jsp").forward(req,resp);
+            req.getRequestDispatcher("/WEB-INF/view/test/list.jsp").forward(req, resp);
         }
     }
 }
