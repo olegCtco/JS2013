@@ -21,7 +21,7 @@ public class DBService {
         Statement stmt = null;
         Connection conn = null;
         try {
-            conn = pool.borrowObject();
+            conn = getConnection(conn);
             List<Student> students = new ArrayList<>();
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM STUDENTS");
@@ -39,7 +39,12 @@ public class DBService {
         }
     }
 
-     void closeStatement(Statement stmt) {
+    private Connection getConnection(Connection conn) throws Exception {
+        conn = pool.borrowObject();
+        return conn;
+    }
+
+    void closeStatement(Statement stmt) {
         try {
             if (stmt != null) stmt.close();
         } catch (SQLException ignore) {
@@ -58,6 +63,7 @@ public class DBService {
     PoolableObjectFactory<Connection> connectionFactory = new BasePoolableObjectFactory<Connection>(){
         @Override
         public Connection makeObject() throws Exception {
+            System.out.println("Create new connection.....");
             try {
                 String url = "jdbc:" + "h2:" + "./db/h2test";
                 return DriverManager.getConnection(url, "sa", "");
@@ -70,6 +76,7 @@ public class DBService {
         public void destroyObject(Connection connection) throws Exception {
             connection.close();
         }
+
     };
 
     public void init() {
@@ -79,6 +86,10 @@ public class DBService {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        pool= new GenericObjectPool<Connection>(connectionFactory);
+        GenericObjectPool.Config config = new GenericObjectPool.Config();
+        config.maxActive=5;
+        config.maxWait = 5;
+        config.whenExhaustedAction=GenericObjectPool.WHEN_EXHAUSTED_FAIL;
+        pool= new GenericObjectPool<Connection>(connectionFactory,config);
     }
 }
