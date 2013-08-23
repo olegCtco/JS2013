@@ -7,6 +7,7 @@
     <groupId>2013-08-23.web-studentlist-db</groupId>
     <artifactId>2013-08-23.web-studentlist-db</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <developers>
         <developer>
             <name>Deniss Udod</name>
@@ -32,7 +33,7 @@
         <developer>
             <name>Oleg Fedkin</name>
             <roles>
-                <role>developer </role>
+                <role>developer</role>
             </roles>
         </developer>
         <developer>
@@ -55,9 +56,9 @@
         </developer>
         <developer>
             <name>Mihail Ruskevich</name>
-                <roles>
-                    <role>pupet</role>
-                </roles>
+            <roles>
+                <role>pupet</role>
+            </roles>
         </developer>
         <developer>
             <name>Dmitry Rahmanin</name>
@@ -66,6 +67,38 @@
             </roles>
         </developer>
     </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*ITest.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.16</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>**/ITest*.java</include>
+                                <include>**/*ITest.java</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>com.h2database</groupId>

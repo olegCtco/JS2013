@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class H2Test {
+public class H2 {
 
     private Statement stmt;
     private Connection conn;
