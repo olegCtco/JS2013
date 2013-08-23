@@ -8,5 +8,13 @@
     <artifactId>2013-08-23.web-studentlist-db</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    
+    <developers>
+        <developer>
+            <name>Denid Udod</name>
+            <roles>
+                <role>master of puppets</role>
+            </roles>
+        </developer>
+    </developers>
+
 </project>
