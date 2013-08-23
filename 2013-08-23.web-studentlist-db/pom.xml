@@ -140,6 +140,13 @@
             <version>1.9.5</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+
         <!-- SERVLET API + JSTL -->
         <dependency>
             <groupId>javax.servlet</groupId>
