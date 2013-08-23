@@ -7,6 +7,7 @@
     <groupId>2013-08-23.web-studentlist-db</groupId>
     <artifactId>2013-08-23.web-studentlist-db</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <developers>
         <developer>
@@ -97,8 +98,23 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.0.5.v20130815</version>
+                <configuration>
+                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                    <stopPort>8888</stopPort>
+                    <stopKey>stop</stopKey>
+                    <webAppConfig>
+                        <contextPath>/js</contextPath>
+                    </webAppConfig>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -115,6 +131,26 @@
             <artifactId>mockito-all</artifactId>
             <version>1.9.5</version>
         </dependency>
+
+        <!-- SERVLET API + JSTL -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>
