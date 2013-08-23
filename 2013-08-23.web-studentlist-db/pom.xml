@@ -9,6 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <developers>
         <developer>
+            <name>Denis Udod</name>
+        </developer>
+        <developer>
             <name>Vadi Butross</name>
             <roles>
                 <role>Learn about DB!</role>
