@@ -29,6 +29,12 @@
                 <role>puppet</role>
             </roles>
         </developer>
+        <developer>
+            <name>Daniils Luchanskis</name>
+            <roles>
+                <role>Kitchen CEO</role>
+            </roles>
+        </developer>
     </developers>
 
 </project>
