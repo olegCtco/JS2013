@@ -1,5 +1,7 @@
 package student.web.test;
 
+import com.fasterxml.jackson.core.JsonFactory;
+import org.codehaus.jackson.map.ObjectMapper;
 import student.app.test.ListTest;
 import student.domain.Student;
 
@@ -15,9 +17,17 @@ import java.util.List;
 public class ListTestServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getContentType();
         ListTest app = new ListTest();
         List<Student> students = app.getStudents();
         req.setAttribute("students",students);
-        req.getRequestDispatcher("/WEB-INF/view/test/list.jsp").forward(req,resp);
+        //
+        if ("application/json".equals(req.getContentType())) {
+            //1. Convert Java object to JSON format
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.writeValue(resp.getWriter(),students);
+        } else {
+            req.getRequestDispatcher("/WEB-INF/view/test/list.jsp").forward(req,resp);
+        }
     }
 }
