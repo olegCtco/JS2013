@@ -8,12 +8,14 @@
     <artifactId>2013-08-23.web-studentlist-db</artifactId>
     <version>1.0-SNAPSHOT</version>
     <developers>
+
         <developer>
             <name>Vadi Butross</name>
             <roles>
                 <role>Learn about DB!</role>
             </roles>
         </developer>
+
         <developer>
             <name>Oleg Fedkin</name>
             <roles>
