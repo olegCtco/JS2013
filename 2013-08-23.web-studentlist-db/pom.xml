@@ -15,6 +15,13 @@
                 <role>master of puppets</role>
             </roles>
         </developer>
+
+        <developer>
+            <name>Deniss Fjodorov</name>
+            <roles>
+                <role>puppet</role>
+            </roles>
+        </developer>
     </developers>
 
 </project>
