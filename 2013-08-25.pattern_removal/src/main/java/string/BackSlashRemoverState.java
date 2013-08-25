@@ -11,7 +11,8 @@ public enum BackSlashRemoverState {
             remover.result.append(c);
             return FIND;
         }
-    }, FOUNDED {
+    },
+    FOUNDED {
         public BackSlashRemoverState send(BackSlashRemover remover) {
             char c = remover.currentChar;
             if (c == '\n') {
@@ -27,7 +28,9 @@ public enum BackSlashRemoverState {
             remover.founded.append(c);
             return FOUNDED;
         }
-    }, REMOVE, APPEND;
+    },
+    // need only in not OOP solutions
+    REMOVE, APPEND;
 
     public BackSlashRemoverState send(BackSlashRemover remover) {
         return this;
