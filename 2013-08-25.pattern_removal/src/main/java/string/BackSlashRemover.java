@@ -22,15 +22,21 @@ public class BackSlashRemover {
         this.state = state;
         switch (state) {
             case FIND: find(c);break;
-            case FINDED: founded(c);break;
+            case FOUNDED: founded(c);break;
             case REMOVE: remove();break;
             case APPEND: append(c);break;
         }
     }
 
+    char currentChar;
+    void send_v2(char c){
+        currentChar = c;
+        state = state.send(this);
+    }
+
     void find(char c) {
         if (c=='\\') {
-            send(c,FINDED);
+            send(c, FOUNDED);
         } else {
             result.append(c);
         }
@@ -56,5 +62,9 @@ public class BackSlashRemover {
     }
     public String getResult() {
             return result.toString()+founded.toString();
+    }
+
+    void clean(StringBuilder builder) {
+        builder.delete(0,builder.length());
     }
 }

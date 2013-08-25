@@ -16,12 +16,12 @@ public class StringTest {
     public void shouldMoveFRomFIND2FINDED_ifReceivedBackSlash() throws Exception {
         BackSlashRemover m = new BackSlashRemover();
         m.send('\\');
-        assertEquals(FINDED, m.getState());
+        assertEquals(FOUNDED, m.getState());
     }
     @Test
     public void shouldMoveFoomFINDEDE2FIND_ifReceivedENTER() throws Exception {
         BackSlashRemover m = new BackSlashRemover();
-        m.state = FINDED;
+        m.state = FOUNDED;
         m.send('\n');
         assertEquals(FIND, m.getState());
     }
@@ -35,15 +35,15 @@ public class StringTest {
     public void shouldReturnResultString() throws Exception {
         BackSlashRemover m = new BackSlashRemover();
         m.send('a');
-        assertEquals("a",m.getResult());
+        assertEquals("a", m.getResult());
     }
 
     @Test
     public void shouldStayInFINDED_IfBS() throws Exception {
         BackSlashRemover m = new BackSlashRemover();
-        m.state=FINDED;
+        m.state= FOUNDED;
         m.send('\\');
-        assertEquals(FINDED, m.getState());
+        assertEquals(FOUNDED, m.getState());
     }
     @Test
          public void shouldREturnCOMPETEString_ISTateFINDED() throws Exception {
