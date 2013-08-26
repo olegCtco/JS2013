@@ -19,8 +19,10 @@ public class ListJSONServlet extends HttpServlet {
         ListTest app = new ListTest();
         List<Student> students = app.getStudents();
         req.setAttribute("students", students);
+        //
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(resp.getWriter(), students);
+        //
     }
 }
 
